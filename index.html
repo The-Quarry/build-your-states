@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Save Your States</title>
   <link rel="stylesheet" href="./static/style.css" />
- 
+
 </head>
+
 <body>
   <div class="header-bar">
     <div class="logo-group">
@@ -24,10 +26,11 @@
   </div>
 
   <div class="link-buttons">
-  <a href="https://www.gov.gg/committees" target="_blank">What the Committees do</a>
-  <a href="https://www.thequarry.media/election-2025-match-your-candidate/" target="_blank">Find deputies' views with BallotBot</a>
-  <a href="https://www.thequarry.media/about/" target="_blank">Learn more & support The Quarry</a>
-</div>
+    <a href="https://www.gov.gg/committees" target="_blank">What the Committees do</a>
+    <a href="https://www.thequarry.media/election-2025-match-your-candidate/" target="_blank">Find deputies' views with
+      BallotBot</a>
+    <a href="https://www.thequarry.media/about/" target="_blank">Learn more & support The Quarry</a>
+  </div>
 
   <div id="deck" class="deck"></div>
 
@@ -137,12 +140,14 @@
         <button onclick="clearCommittee(this)">Clear Committee</button>
       </div>
     </div>
+  </div> <!-- closes .committee-row -->
+  </div> <!-- closes .committee-scroll-wrapper -->
 
   <!-- Authorities, Boards & Commissions -->
   <h2>Authorities, Boards &amp; Commissions</h2>
   <div class="committee-scroll-wrapper">
     <div class="committee-row single-line">
-        <div class="committee">
+      <div class="committee">
         <h3>Development & Planning Authority</h3>
         <div class="dropzone" data-committee="Development & Planning Authority">
           <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -154,7 +159,7 @@
         <button onclick="clearCommittee(this)">Clear Committee</button>
       </div>
 
-        <div class="committee">
+      <div class="committee">
         <h3>Transport Licensing Authority</h3>
         <div class="dropzone" data-committee="Transport Licensing Authority">
           <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -166,7 +171,7 @@
         <button onclick="clearCommittee(this)">Clear Committee</button>
       </div>
 
-        <div class="committee">
+      <div class="committee">
         <h3>Overseas Aid</h3>
         <div class="dropzone" data-committee="Overseas Aid">
           <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -174,7 +179,7 @@
         <button onclick="clearCommittee(this)">Clear Committee</button>
       </div>
 
-        <div class="committee">
+      <div class="committee">
         <h3>States Trading Supervisory Board</h3>
         <div class="dropzone" data-committee="States Trading Supervisory Board">
           <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -184,7 +189,7 @@
         <button onclick="clearCommittee(this)">Clear Committee</button>
       </div>
 
-        <div class="committee">
+      <div class="committee">
         <h3>States Assembly & Constitution Committeee</h3>
         <div class="dropzone" data-committee="States Assembly & Constitution Committee">
           <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -196,7 +201,7 @@
         <button onclick="clearCommittee(this)">Clear Committee</button>
       </div>
 
-        <div class="committee">
+      <div class="committee">
         <h3>Scrutiny Management Committee</h3>
         <div class="dropzone" data-committee="Scrutiny Management Committee">
           <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -205,28 +210,22 @@
         </div>
         <button onclick="clearCommittee(this)">Clear Committee</button>
       </div>
+
+    </div>
   </div>
-</div>
 
-<footer style="text-align: center; margin-top: 40px;">
-  <a href="https://www.thequarry.media" target="_blank" style="color: #007BFF; font-weight: bold; text-decoration: none;">
-    Back to The Quarry
-  </a>
-</footer>
+  <footer style="text-align: center; margin-top: 40px;">
+    <a href="https://www.thequarry.media" target="_blank"
+      style="color: #007BFF; font-weight: bold; text-decoration: none;">
+      Back to The Quarry
+    </a>
+  </footer>
 
-<!-- Load jsPDF first -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Load jsPDF first -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<!-- Load your own script after -->
-<script src="./static/script.js"></script>
+  <!-- Load your own script after -->
+  <script src="./static/script.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
