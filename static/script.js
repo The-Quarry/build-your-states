@@ -49,7 +49,7 @@ window.onload = function () {
     card.dataset.name = candidate.name;
 
     const img = document.createElement("img");
-    img.src = "static/" + candidate.image;
+    img.src = "./static/" + candidate.image;
     img.alt = candidate.name;
     img.className = "card-image";
 
