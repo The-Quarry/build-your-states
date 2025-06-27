@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Save Your States</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="header-bar">
+    <div class="logo-group">
+      <a href="https://yourwebsite.com">
+        <img src="static/quarry_square_logo.png" alt="The Quarry logo" class="site-logo" />
+      </a>
+      <img src="static/build_your_states.png" alt="Build Your States" class="title-logo" />
+    </div>
+  </div>
+
+  <div class="button-bar">
+    <button onclick="saveAssignments()">Save</button>
+    <button onclick="clearAssignments()">Clear All</button>
+    <button onclick="exportAsPDF()">Download as PDF</button>
+  </div>
+
+  <div class="link-buttons">
+  <a href="https://www.gov.gg/committees" target="_blank">What the Committees do</a>
+  <a href="https://www.thequarry.media/election-2025-match-your-candidate/" target="_blank">Find deputies' views with BallotBot</a>
+  <a href="https://www.thequarry.media/about/" target="_blank">Learn more & support The Quarry</a>
+</div>
+
+  <div id="deck" class="deck"></div>
+
+  <h2>Policy &amp; Resources</h2>
+  <div class="committee-scroll-wrapper">
+    <div class="committee-row single-line">
+      <div class="committee">
+        <h3>Policy &amp; Resources</h3>
+        <div class="dropzone" data-committee="Policy &amp; Resources">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice-President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Principal Committees -->
+  <h2>Principal Committees</h2>
+  <div class="committee-scroll-wrapper">
+    <div class="committee-row single-line">
+      <!-- Repeat committee blocks for each committee -->
+      <div class="committee">
+        <h3>Economic Development</h3>
+        <div class="dropzone" data-committee="Economic Development">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+      <div class="committee">
+        <h3>Education, Sport & Culture</h3>
+        <div class="dropzone" data-committee="Education, Sport & Culture">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+      <div class="committee">
+        <h3>Employment & Social Security</h3>
+        <div class="dropzone" data-committee="Employment & Social Security">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+      <div class="committee">
+        <h3>Environment & Infrastructure</h3>
+        <div class="dropzone" data-committee="Environment & Infrastructure">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+      <div class="committee">
+        <h3>Health & Social Care</h3>
+        <div class="dropzone" data-committee="Health & Social Care">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+      <div class="committee">
+        <h3>Home Affairs</h3>
+        <div class="dropzone" data-committee="Home Affairs">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+      <div class="committee">
+        <h3>Housing</h3>
+        <div class="dropzone" data-committee="Housing">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+    </div>
+
+  <!-- Authorities, Boards & Commissions -->
+  <h2>Authorities, Boards &amp; Commissions</h2>
+  <div class="committee-scroll-wrapper">
+    <div class="committee-row single-line">
+        <div class="committee">
+        <h3>Development & Planning Authority</h3>
+        <div class="dropzone" data-committee="Development & Planning Authority">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+        <div class="committee">
+        <h3>Transport Licensing Authority</h3>
+        <div class="dropzone" data-committee="Transport Licensing Authority">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+        <div class="committee">
+        <h3>Overseas Aid</h3>
+        <div class="dropzone" data-committee="Overseas Aid">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+        <div class="committee">
+        <h3>States Trading Supervisory Board</h3>
+        <div class="dropzone" data-committee="States Trading Supervisory Board">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+        <div class="committee">
+        <h3>States Assembly & Constitution Committeee</h3>
+        <div class="dropzone" data-committee="States Assembly & Constitution Committee">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+
+        <div class="committee">
+        <h3>Scrutiny Management Committee<h3>
+        <div class="dropzone" data-committee="Scrutiny Management Committee">
+          <div class="ghost-slot" data-label="President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" data-label="Vice President" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div class="ghost-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <button onclick="clearCommittee(this)">Clear Committee</button>
+      </div>
+  </div>
+</div>
+
+  <script src="static/script.js" defer></script>
+  <footer style="text-align: center; margin-top: 40px;">
+    <a href="https://www.thequarry.media" target="_blank" style="color: #007BFF; font-weight: bold; text-decoration: none;">
+      Back to The Quarry
+    </a>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

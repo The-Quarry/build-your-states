@@ -1,0 +1,398 @@
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  padding: 20px;
+  background-color: #f0f8ff;
+}
+
+h1 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+h2 {
+  font-size: 38px;   /* Or larger like 28px */
+  margin-top: 40px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: 16px;
+  padding: 12px 20px;
+  font-weight: bold;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:hover {
+  background-color: #0056b3;  /* Darker on hover */
+}
+
+#deck {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  overflow-x: auto;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #ccc;
+}
+
+#deck .card {
+  width: 300px;
+  height: 300px;
+  font-size: 14px;
+}
+
+.button-bar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;               /* space between buttons */
+  margin-bottom: 30px;     /* gap above deck */
+  margin-top: 30px;        /* optional: gap below heading */
+}
+.card {
+  width: 90px;
+  height: 90px;
+  background-color: #e0e0e0;
+  border: 1px solid #999;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 12px;
+  cursor: grab;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #555;
+  padding: 2px 0;
+}
+
+.committee-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+  scroll-padding-left: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.committee {
+  flex: 0 0 auto;
+  width: 570px;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  scroll-snap-align: start;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.committee h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.committee.partial {
+  background-color: #fff7d1 !important;
+}
+
+.committee.full {
+  background-color: #d4edda !important;
+}
+
+/* Center Policy & Resources box */
+.committee-scroll-wrapper:first-of-type {
+  overflow-x: hidden;
+}
+
+.committee-scroll-wrapper:first-of-type .committee-row {
+  width: auto !important;
+  margin: 0 auto;
+  justify-content: center !important;
+}
+
+
+.dropzone {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto; /* enables horizontal scroll */
+  padding: 60px 10px 10px;
+  background-color: #f5f5f5;
+  border: 2px dashed #bbb;
+  border-top: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  min-width: 500px; /* ✅ wider to fit 5 ghost-slots */
+  scroll-snap-type: x mandatory;
+}
+
+.ghost-slot {
+  flex: 0 0 100px;
+  height: 110px;
+  border: 2px dashed #ccc;
+  background-color: #fafafa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+  padding-top: 25px;
+  scroll-snap-align: start;
+}
+
+.ghost-slot[data-label]::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #444;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.ghost-slot.over {
+  background-color: #e0f7ff;
+}
+
+.deck {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  cursor: grab;
+}
+
+#badge-pool {
+  margin: 15px 0;
+}
+
+.committee-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 20px;
+  scroll-padding-left: 20px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+/* Optional: visible scrollbar styling */
+.committee-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.committee-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 4px;
+}
+
+.committee-row:not(:first-of-type) {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  width: 100%;
+  padding: 0 10px 20px;
+}
+
+
+
+/* Responsive fallback */
+@media (max-width: 1024px) {
+  .committee-row {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  .committee {
+    width: 100%;
+  }
+
+  .dropzone {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  #deck {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
+@media (max-width: 1500px) {
+  .committee-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+  }
+
+  .committee {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+  }
+
+  .dropzone {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}
+
+.link-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.link-buttons a {
+  background-color: #28a745; /* Green tone for difference */
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.link-buttons a:hover {
+  background-color: #218838;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+  background-color: #e6f0ff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.site-logo {
+  height: 150px; /* Adjust size as needed */
+  width: auto;
+  object-fit: contain;
+}
+
+.header-bar h1 {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
+  color: #003366;
+}
+
+@media (max-width: 600px) {
+  .header-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .header-bar h1 {
+    text-align: center;
+  }
+}
+
+.title-logo {
+  height: 120px;
+  object-fit: contain;
+  width: auto;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.title-image {
+  display: block;
+  max-width: 600px;      /* Adjust this for size */
+  width: 90%;
+  margin: 0 auto 20px;   /* Centers and adds space below */
+  height: auto;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* spacing between logos */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
