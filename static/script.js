@@ -36,7 +36,9 @@ const candidates = [
   { name: "Neil Inder", image: "photos/35.png" },
   { name: "David Dorrity", image: "photos/36.png" },
   { name: "Rhona Humphreys", image: "photos/37.png" },
-  { name: "Sarah Hansmann Rouxel", image: "photos/38.png" }
+  { name: "Sarah Hansmann Rouxel", image: "photos/38.png" },
+  { name: "Edward Hill", image: "photos/39.png" },
+  { name: "Alex Snowden", image: "photos/40.png" }
 ];
 
 window.onload = function () {
